@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import { MainLayout } from '../layouts/MainLayout/MainLayout';
 import { ClientLayout } from '../layouts/ClientLayout/ClientLayout';
 import { Auth } from '../pages/Auth/Auth';
@@ -20,12 +20,8 @@ export const router = createBrowserRouter(
       Component: Auth,
     },
     // {
-    //   path: 'NaturalDisasters',
-    //   Component: NaturalDisasters,
-    // },
-    // {
     //   path: '*',
-    //   element: <Navigate to={'/'} />,
+    //   element: <Navigate to="/" />,
     // },
   ],
   { basename: import.meta.env.BASE_URL }
