@@ -1,0 +1,29 @@
+.AboutUs {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+
+  scroll-margin-top: 50px;
+}
+
+.img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 1;
+  background-color: white;
+  border-radius: 6px;
+  min-height: 600px;
+  min-width: 600px;
+}
+
+.content {
+  flex: 1;
+}
+
+@media (max-width: 780px) {
+  .AboutUs {
+    flex-direction: column;
+  }
+}

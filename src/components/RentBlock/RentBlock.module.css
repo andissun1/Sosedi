@@ -1,0 +1,30 @@
+.RentBlock {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+
+  scroll-margin-top: 50px;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  background-color: white;
+  flex: 1;
+}
+
+.content {
+  flex: 1;
+}
+
+.content ul {
+  padding-left: 20px;
+}
+
+@media (max-width: 780px) {
+  .RentBlock {
+    flex-direction: column-reverse;
+  }
+}

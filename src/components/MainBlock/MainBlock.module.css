@@ -1,0 +1,55 @@
+.MainBlock {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  min-height: 100px;
+  padding: 20px;
+  transition: all 0.3s ease-in;
+  margin-top: 50px;
+  scroll-margin-top: 50px;
+}
+
+.games,
+.events,
+.rent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.games {
+  flex: 1;
+  background-color: yellow;
+}
+
+.rent {
+  flex: 1;
+  background-color: purple;
+}
+
+.events {
+  flex: 1;
+  background-color: bisque;
+}
+
+.opened {
+  flex: 8;
+}
+
+.closed span {
+  display: inline-block;
+  transform: rotate(270deg);
+}
+
+.resizeWidget {
+  height: 600px;
+}
+
+.resizeWidget > div {
+  height: 100%;
+}

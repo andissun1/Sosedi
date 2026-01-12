@@ -1,0 +1,22 @@
+.LatestNewsFromVK {
+  background-color: white;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  scroll-margin-top: 50px;
+}
+
+.LatestNewsFromVK img {
+  flex: 1;
+  min-width: 50%;
+}
+
+.LatestNewsFromVK p {
+  flex: 1;
+}
+
+@media (max-width: 780px) {
+  .LatestNewsFromVK {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,26 @@
+.Footer {
+  display: flex;
+  flex-direction: column;
+  background-color: purple;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.Footer a {
+  color: white;
+}
+
+.Footer h2 {
+  display: flex;
+  align-items: center;
+  align-self: center;
+}
+
+.logo {
+  max-width: 30px;
+  border-radius: 50%;
+}
+
+.contacts {
+}
