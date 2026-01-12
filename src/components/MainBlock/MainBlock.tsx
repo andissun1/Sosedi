@@ -6,11 +6,15 @@ export const MainBlock = () => {
 
   const changeCardSize = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     container.current?.childNodes.forEach((div) => {
-      div.classList.remove(`${style.opened}`);
-      div.classList.add(`${style.closed}`);
+      if (div instanceof HTMLElement) {
+        div.classList.remove(`${style.opened}`);
+        div.classList.add(`${style.closed}`);
+      }
     });
 
-    container.current.classList.add(`${style.resizeWidget}`);
+    if (container.current !== null) {
+      container.current.classList.add(`${style.resizeWidget}`);
+    }
 
     event.currentTarget.classList.add(`${style.opened}`);
     event.currentTarget.classList.remove(`${style.closed}`);
