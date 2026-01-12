@@ -7,7 +7,7 @@
   min-height: 100px;
   padding: 20px;
   transition: all 0.3s ease-in;
-  margin-top: 50px;
+  margin-top: 60px;
   scroll-margin-top: 50px;
 }
 
@@ -20,11 +20,17 @@
   min-height: 180px;
   border-radius: 6px;
   transition: all 0.3s ease-in-out;
+
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  text-shadow: 0px 0px 8px black;
 }
 
 .games {
   flex: 1;
-  background-color: yellow;
+  background-image: url('/Sosedi/images/boardGames.jpg');
+  background-size: cover;
 }
 
 .rent {
@@ -38,7 +44,13 @@
 }
 
 .opened {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
   flex: 8;
+  background-image: none;
+  background-color: white;
 }
 
 .closed span {
@@ -52,4 +64,27 @@
 
 .resizeWidget > div {
   height: 100%;
+}
+
+@media (max-width: 780px) {
+  .MainBlock {
+    flex-direction: column;
+    height: 600px;
+    min-height: auto;
+    gap: 0px;
+
+    transition: all 0.1s ease-in-out;
+  }
+
+  .games,
+  .events,
+  .rent {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .closed span {
+    display: inline-block;
+    transform: rotate(0deg);
+  }
 }

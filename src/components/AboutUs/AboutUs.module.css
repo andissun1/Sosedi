@@ -15,11 +15,52 @@
   background-color: white;
   border-radius: 6px;
   min-height: 600px;
-  min-width: 600px;
 }
 
 .content {
   flex: 1;
+}
+
+.AboutUs {
+  min-width: 100%;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  padding: 0;
+
+  overflow-x: auto;
+  /* scroll-padding: 8px; */
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.secondWrapper {
+  position: relative;
+}
+
+.secondWrapper button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  border: none;
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
 }
 
 @media (max-width: 780px) {

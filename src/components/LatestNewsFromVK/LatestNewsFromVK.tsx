@@ -3,7 +3,7 @@ import style from './LatestNewsFromVK.module.css';
 export const LatestNewsFromVK = () => {
   return (
     <div className={style.LatestNewsFromVK} id="latestNews">
-      <img src="/images/latestEvent.jpg" alt="123" />
+      <img src="/Sosedi/images/latestEvent.jpg" alt="123" />
       <div>
         <h1>Особое объявление</h1>
         <p>

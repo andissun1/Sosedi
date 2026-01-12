@@ -4,7 +4,7 @@ import style from './Header.module.css';
 export const Header = () => {
   return (
     <div className={style.Header}>
-      <img src="/public/images/logo.jpg" alt="logo" />
+      <img src="/Sosedi/images/logo.jpg" alt="logo" />
       <nav>
         <a href={'#main'}>Главная</a>
         <a href="#latestNews">Новости</a>
