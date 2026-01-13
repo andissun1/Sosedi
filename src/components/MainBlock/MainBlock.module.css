@@ -50,7 +50,7 @@
 
   flex: 8;
   background-image: none;
-  background-color: white;
+  background-color: lightgray;
 }
 
 .closed span {
@@ -71,7 +71,7 @@
     flex-direction: column;
     height: 600px;
     min-height: auto;
-    gap: 0px;
+    gap: 5px;
 
     transition: all 0.1s ease-in-out;
   }
