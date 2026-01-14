@@ -26,7 +26,7 @@ export const MainBlock = () => {
   return (
     <div className={style.MainBlock} id="main" ref={container}>
       <div onClick={changeCardSize} id="games" className={style.games}>
-        <span>Настолки</span>
+        {activeSlide === 'games' ? 'Контент' : <span>Настолки</span>}
       </div>
       <div onClick={changeCardSize} id="rent" className={style.rent}>
         <span>Аренда</span>
