@@ -7,19 +7,15 @@ import { MovieService } from 'src/movie/movie.service';
 
 @Injectable()
 export class ReviewService {
-  constructor(
-    @InjectRepository(ReviewEntity)
-    private readonly ReviewRepository: Repository<ReviewEntity>,
-    private readonly movieService: MovieService,
-  ) {}
-
-  async create(dto: CreateReviewDto): Promise<ReviewEntity> {
-    const { text, rating, movieId } = dto;
-
-    const movie = await this.movieService.findById(movieId);
-
-    const review = this.ReviewRepository.create({ text, rating, movie });
-
-    return await this.ReviewRepository.save(review);
-  }
+  // constructor(
+  //   @InjectRepository(ReviewEntity)
+  //   private readonly ReviewRepository: Repository<ReviewEntity>,
+  //   private readonly movieService: MovieService,
+  // ) {}
+  // async create(dto: CreateReviewDto): Promise<ReviewEntity> {
+  //   const { text, rating, movieId } = dto;
+  //   const movie = await this.movieService.findById(movieId);
+  //   const review = this.ReviewRepository.create({ text, rating, movie });
+  //   return await this.ReviewRepository.save(review);
+  // }
 }
