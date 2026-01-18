@@ -10,4 +10,6 @@ export class CreateMovieDto {
   @Min(1888)
   @Max(new Date().getFullYear())
   releaseYear: number;
+
+  actorIds: string[];
 }

@@ -12,6 +12,7 @@ import {
 import { MovieService } from './movie.service';
 import { CreateMovieDto } from './dto/createMovie.dto';
 import { updateMovieDto } from './dto/updateMovie.dto';
+import { MovieEntity } from './entities/movie.entity';
 
 @Controller('movie')
 export class MovieController {
@@ -38,7 +39,7 @@ export class MovieController {
   }
 
   @Post()
-  create(@Body() dto: CreateMovieDto) {
+  create(@Body() dto: MovieEntity) {
     return this.movieService.create(dto);
   }
 

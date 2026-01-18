@@ -1,10 +1,16 @@
+import { IsArray, IsUUID } from 'class-validator';
+import { actorEntity } from 'src/actor/entities/actor.entity';
+import { ReviewEntity } from 'src/review/entities/review.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
-  Generated,
-  PrimaryColumn,
-  // PrimaryGeneratedColumn,
+  JoinTable,
+  ManyToMany,
+  // Generated,
+  OneToMany,
+  // PrimaryColumn,
+  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 
@@ -17,9 +23,9 @@ export enum Genre {
 
 @Entity({ name: 'movies' })
 export class MovieEntity {
-  // @PrimaryGeneratedColumn()
-  @PrimaryColumn()
-  @Generated('uuid')
+  @PrimaryGeneratedColumn('uuid')
+  // @PrimaryColumn()
+  // @Generated('uuid')
   id: string;
 
   @Column({
@@ -45,6 +51,17 @@ export class MovieEntity {
   @Column({ type: 'enum', enum: Genre, default: Genre.DRAMA })
   genre: Genre;
 
+  @ManyToMany(() => actorEntity, (actor) => actor.movies)
+  @JoinTable({
+    name: 'movie_actors',
+    joinColumn: { name: 'movie_id', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'actor_id', referencedColumnName: 'id' },
+  })
+  actors: actorEntity[];
+
+  @OneToMany(() => ReviewEntity, (review) => review.movie)
+  reviews: ReviewEntity[];
+
   @Column({
     type: 'decimal',
     precision: 3, // Количество чисел после точки
@@ -61,4 +78,8 @@ export class MovieEntity {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @IsArray()
+  @IsUUID('4', { each: true })
+  actorIds: string[];
 }
