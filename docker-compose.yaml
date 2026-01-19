@@ -6,6 +6,7 @@ services:
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DATABASE}
     ports:
       - 5433:5432
     volumes:
@@ -13,8 +14,21 @@ services:
     networks:
       - myNet
 
+  # redis:
+  #   container_name: redis
+  #   image: redis:5.0
+  #   restart: always
+  #   ports:
+  #     - 6379:6379
+  #   volumes:
+  #     - redis_data:/data
+  #   command: redis-server --requirepass ${REDIS_PASSWORD}
+  #   networks:
+  #     - myNet
+
 volumes:
   postges_data:
+  # redis_data:
 
 networks:
   myNet:
