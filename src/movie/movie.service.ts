@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { Movie } from 'generated/prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateMovieDto } from './dto/createMovie.dto';
+import { updateMovieDto } from './dto/updateMovie.dto';
 
 @Injectable()
 export class MovieService {
@@ -9,7 +10,7 @@ export class MovieService {
 
   async findAll() {
     return await this.prismaService.movie.findMany({
-      where: { isAvailable: true },
+      where: { isAvailable: false },
       orderBy: {
         createdAt: 'desc',
       },
@@ -46,29 +47,46 @@ export class MovieService {
     return movie;
   }
 
-  // async findById(id: string): Promise<MovieEntity> {
-  //   const movie = await this.movieRepository.findOne({
-  //     where: {
-  //       id,
-  //     },
-  //     relations: ['actors'],
-  //   });
-  //   if (!movie) throw new NotFoundException('Не найден фильм');
-  //   return movie;
-  // }
+  async findById(id: string): Promise<Movie> {
+    const movie = await this.prismaService.movie.findUnique({
+      where: {
+        id,
+      },
+      include: {
+        actors: true,
+        poster: true,
+        reviews: true,
+      },
+    });
 
-  // async update(id: string, dto: updateMovieDto): Promise<responseMovieDto> {
-  //   const movie = await this.findById(id);
-  //   Object.assign(movie, dto);
-  //   await this.movieRepository.save(movie);
-  //   return movie;
-  // }
-  // async delete(id: string): Promise<string> {
-  //   const movie = await this.findById(id);
-  //   await this.movieRepository.remove(movie);
-  //   return `Фильм ${id} удален`;
-  // }
-  // test() {
-  //   return 'hello';
-  // }
+    if (!movie || !movie.isAvailable)
+      throw new NotFoundException('Не найден фильм');
+
+    return movie;
+  }
+
+  async update(id: string, dto: updateMovieDto): Promise<Movie> {
+    const movie = await this.findById(id);
+
+    const newMovie = await this.prismaService.movie.update({
+      where: { id: movie.id },
+      data: {
+        ...dto,
+      },
+    });
+
+    return newMovie;
+  }
+
+  async delete(id: string): Promise<string> {
+    const movie = await this.findById(id);
+
+    await this.prismaService.movie.delete({
+      where: {
+        id: movie.id,
+      },
+    });
+
+    return `Фильм ${id} удален`;
+  }
 }
