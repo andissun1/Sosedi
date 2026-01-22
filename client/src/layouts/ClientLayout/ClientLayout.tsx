@@ -3,7 +3,7 @@ import { LatestNewsFromVK } from '../../components/LatestNewsFromVK/LatestNewsFr
 import { MainBlock } from '../../components/MainBlock/MainBlock';
 import { NewsFromWall } from '../../components/NewsFromWall/NewsFromWall';
 import { RentBlock } from '../../components/RentBlock/RentBlock';
-import style from './clientLayout.module.css';
+import style from './ClientLayout.module.css';
 
 export const ClientLayout = () => {
   return (
