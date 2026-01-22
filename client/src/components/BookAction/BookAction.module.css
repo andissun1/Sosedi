@@ -1,0 +1,55 @@
+.BookAction {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #d9d9d9;
+  width: 100%;
+  height: 500px;
+  border-radius: 24px;
+  padding: 30px 60px;
+
+  scroll-margin-top: 132px;
+}
+
+.BookAction h1 {
+  font-weight: normal;
+  font-size: 48px;
+}
+
+.BookAction form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 32px;
+  /* justify-items: center; */
+}
+
+.BookAction form input:not([type='checkbox']) {
+  border: none;
+  background-color: #aeaeae;
+  height: 60px;
+  border-radius: 8px;
+  width: 430px;
+
+  font-size: 32px;
+  padding: 10px 36px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  grid-column: span 3;
+  justify-self: baseline;
+}
+
+.checkbox a {
+  margin: 4px;
+}
+
+.checkbox input {
+  height: 42px;
+  width: 42px;
+  background-color: #aeaeae;
+  border-radius: 8px;
+  margin: 20px;
+}

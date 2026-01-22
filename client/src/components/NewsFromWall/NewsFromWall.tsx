@@ -16,12 +16,14 @@ export const NewsFromWall = () => {
     const newsNodes = Array.from({ length: 10 }, () => (
       <div className={style.post}>
         <div className={style.img}>Картинка с поста</div>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error possimus
-          laboriosam sunt, rem ipsum numquam delectus? Suscipit voluptatibus laborum
-          repudiandae ex velit animi quod, quibusdam, perferendis natus quaerat ipsum
-          nemo!
-        </p>
+        <div className={style.content}>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error possimus
+            laboriosam sunt, rem ipsum numquam delectus? Suscipit voluptatibus laborum
+            repudiandae ex velit animi quod, quibusdam, perferendis natus quaerat ipsum
+            nemo!
+          </p>
+        </div>
       </div>
     ));
 
@@ -29,7 +31,7 @@ export const NewsFromWall = () => {
   };
 
   return (
-    <div className={style.wrapper}>
+    <div className={style.wrapper} id="latestNews">
       <div className={style.NewsFromWall} ref={newsView}>
         {getNews()}
       </div>

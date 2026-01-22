@@ -4,11 +4,11 @@ import style from './Header.module.css';
 export const Header = () => {
   return (
     <div className={style.Header}>
-      <img src="/Sosedi/images/logo.jpg" alt="logo" />
+      <img src="/public/images/logo.png" alt="logo" />
       <nav>
         <a href={'#main'}>Главная</a>
         <a href="#latestNews">Новости</a>
-        <a href="#about">О нас</a>
+        <a href="#RentBlock">Аренда</a>
         <Link to={'/auth/login'}>Вход</Link>
       </nav>
     </div>

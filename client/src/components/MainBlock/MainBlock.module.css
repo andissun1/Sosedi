@@ -2,13 +2,13 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 20px;
-  background-color: white;
+  gap: 18px;
+  /* background-color: white; */
   min-height: 100px;
-  padding: 20px;
+  /* padding: 20px; */
   transition: all 0.3s ease-in;
   margin-top: 60px;
-  scroll-margin-top: 50px;
+  scroll-margin-top: 132px;
 }
 
 .games,
@@ -18,7 +18,7 @@
   align-items: center;
   justify-content: center;
   min-height: 180px;
-  border-radius: 6px;
+  border-radius: 24px;
   transition: all 0.3s ease-in-out;
 
   color: white;
@@ -29,18 +29,18 @@
 
 .games {
   flex: 1;
-  background-image: url('/Sosedi/images/boardGames.jpg');
+  background-image: url('/public//images/boardGames.jpg');
   background-size: cover;
 }
 
 .rent {
   flex: 1;
-  background-color: purple;
+  background-color: #d9d9d9;
 }
 
 .events {
   flex: 1;
-  background-color: bisque;
+  background-color: #d9d9d9;
 }
 
 .opened {
@@ -50,7 +50,7 @@
 
   flex: 8;
   background-image: none;
-  background-color: lightgray;
+  background-color: #d9d9d9;
 }
 
 .closed span {
@@ -86,5 +86,11 @@
   .closed span {
     display: inline-block;
     transform: rotate(0deg);
+  }
+}
+
+@media (min-width: 1920px) {
+  .MainBlock {
+    margin-top: 132px;
   }
 }

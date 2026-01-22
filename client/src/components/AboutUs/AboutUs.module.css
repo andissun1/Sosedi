@@ -1,9 +1,12 @@
 .AboutUs {
   display: flex;
-  gap: 20px;
-  padding: 20px;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 27px 27px 27px 60px;
+  border-radius: 48px;
+  background-color: #d9d9d9;
 
-  scroll-margin-top: 50px;
+  scroll-margin-top: 132px;
 }
 
 .img {
@@ -13,8 +16,8 @@
 
   flex: 1;
   background-color: white;
-  border-radius: 6px;
-  min-height: 600px;
+  border-radius: 24px;
+  height: 100%;
 }
 
 .content {
@@ -27,13 +30,57 @@
   scroll-snap-align: start;
 }
 
+.AboutUs h1 {
+  font-weight: normal;
+  font-size: 48px;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+.desc {
+  font-size: 24px;
+  margin-bottom: 84px;
+  max-width: 723px;
+}
+
+.content button {
+  height: 100px;
+  width: 528px;
+  border-radius: 24px;
+  background-color: #828282;
+  border: none;
+  font-size: 32px;
+  margin-bottom: 45px;
+}
+
+.stars {
+  display: grid;
+  grid-template-columns: repeat(2, 320px);
+  gap: 70px;
+  width: 100%;
+  height: fit-content;
+  font-size: 24px;
+  margin-bottom: 68px;
+
+  padding: 0;
+}
+
+.stars li {
+  padding-left: 56px;
+  list-style: none;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-image: url('/public/icons/star.svg');
+}
+
 .wrapper {
   display: flex;
   width: 100%;
   scroll-snap-type: x mandatory;
   padding: 0;
 
-  overflow-x: auto;
+  /* overflow-x: auto; */
+  overflow: hidden;
   /* scroll-padding: 8px; */
 }
 
@@ -43,9 +90,10 @@
 
 .secondWrapper {
   position: relative;
+  scroll-margin-top: 132px;
 }
 
-.secondWrapper button {
+/* .secondWrapper button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -53,14 +101,16 @@
   height: 50px;
   width: 50px;
   border: none;
-}
+} */
 
 .next {
   right: 0;
+  display: none;
 }
 
 .prev {
   left: 0;
+  display: none;
 }
 
 @media (max-width: 780px) {

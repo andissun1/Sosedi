@@ -1,5 +1,20 @@
+/* .GiftCards {
+} */
+
+.SpecialOffer {
+  display: flex;
+  flex-direction: column;
+}
+
+.SpecialOffer h1 {
+  font-weight: normal;
+  font-size: 48px;
+}
+
 .NewsFromWall {
   display: flex;
+  margin: auto;
+  width: 1340px;
   gap: 20px;
   padding: 20px;
 
@@ -24,7 +39,6 @@
   text-align: left;
 
   height: 100%;
-  min-width: 250px;
 
   border-radius: 6px;
 
@@ -33,10 +47,13 @@
 }
 
 .post .img {
-  background-color: white;
+  background-color: #d9d9d9;
+  min-height: 498px;
+  min-width: 661px;
+
   width: 100%;
   flex: 1;
-  max-height: 50%;
+
   border-radius: 6px;
   box-sizing: border-box;
 
@@ -61,7 +78,6 @@
 
 .wrapper {
   position: relative;
-  scroll-margin-top: 132px;
 }
 
 .wrapper button {
@@ -73,18 +89,31 @@
   align-items: center;
   justify-content: center;
 
-  background-color: white;
+  background-color: #d9d9d9;
   border: none;
   border-radius: 50%;
   height: 50px;
   width: 50px;
-  display: none;
 }
 
 .next {
-  right: 20px;
+  right: 0px;
 }
 
 .prev {
-  left: 20px;
+  left: 0px;
+}
+
+.rentButton {
+  height: 77px;
+  width: 392px;
+
+  margin-inline: auto;
+
+  border-radius: 24px;
+  border: none;
+  font-size: 32px;
+  background-color: #aeaeae;
+  margin-bottom: 20px;
+  margin-top: 81px;
 }

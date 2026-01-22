@@ -1,13 +1,16 @@
+/* .InfoBlock {
+} */
+
 .RentBlock {
   gap: 20px;
-  /* scroll-margin-top: 132px; */
+  scroll-margin-top: 50px;
 }
 
 .RentBlock h1 {
   font-size: 48px;
   font-weight: 400;
   display: block;
-  width: fit-content;
+  max-width: 473px;
 }
 
 .RentBlock h2 {
@@ -67,9 +70,11 @@
   margin-bottom: 20px;
 }
 
-.content p {
+.content li {
   font-size: 32px;
-  margin-bottom: 55px;
+  margin: 0px 0 0 130px;
+  list-style: none;
+  margin-top: 70px;
 }
 
 .content p:last-of-type {

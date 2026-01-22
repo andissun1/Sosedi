@@ -1,5 +1,12 @@
 .clientLayout {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 32px;
+}
+
+@media (min-width: 1920px) {
+  .clientLayout {
+    max-width: 1620px;
+    margin: auto;
+  }
 }
