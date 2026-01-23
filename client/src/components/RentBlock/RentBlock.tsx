@@ -19,7 +19,7 @@ export const RentBlock = () => {
         </div>
       </div>
 
-      <div
+      {/* <div
         className={style.wrapper}
         style={{ flexDirection: 'row-reverse', marginTop: '90px' }}
       >
@@ -38,7 +38,7 @@ export const RentBlock = () => {
           <div className={style.photo + ' ' + style.firstPhoto}></div>
           <div className={style.photo + ' ' + style.secondPhoto}></div>
         </div>
-      </div>
+      </div> */}
 
       <div className={style.everyRoom}>
         <h1>Что есть в каждой комнате</h1>

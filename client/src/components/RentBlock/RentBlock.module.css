@@ -119,3 +119,39 @@
   margin-bottom: 20px;
   margin-top: 81px;
 }
+
+@media (max-width: 1600px) {
+  .RentBlock h1,
+  .content h2 {
+    font-size: 32px;
+  }
+
+  .RentBlock p,
+  .RentBlock button {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .photo {
+    height: 250px;
+    width: 200px;
+  }
+
+  .everyRoom button {
+    width: 100%;
+  }
+
+  .content > * {
+    margin-left: 10px;
+  }
+
+  .wrapperItem {
+    flex-direction: column;
+    min-height: 1000px;
+  }
+}

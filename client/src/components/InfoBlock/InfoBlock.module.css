@@ -124,3 +124,25 @@
   margin-bottom: 20px;
   margin-top: 81px;
 }
+
+@media (max-width: 1600px) {
+  .InfoBlock h1,
+  .InfoBlock h2 {
+    font-size: 32px;
+  }
+
+  .InfoBlock li {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .photo {
+    width: 250px;
+  }
+}

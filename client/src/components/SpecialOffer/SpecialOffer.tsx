@@ -24,7 +24,7 @@ export const SpecialOffer = () => {
 
   return (
     <div className={style.SpecialOffer}>
-      <h1>Наши специальные предложения</h1>
+      <h1>Клубы в клубе</h1>
       <div className={style.wrapper}>
         <div className={style.NewsFromWall} ref={newsView}>
           {getNews()}

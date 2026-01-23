@@ -28,7 +28,7 @@
   background-color: #aeaeae;
   height: 60px;
   border-radius: 8px;
-  width: 430px;
+  width: 100%;
 
   font-size: 32px;
   padding: 10px 36px;
@@ -52,4 +52,51 @@
   background-color: #aeaeae;
   border-radius: 8px;
   margin: 20px;
+}
+
+@media (max-width: 1600px) {
+  .BookAction {
+    width: 100%;
+  }
+
+  .BookAction h1 {
+    font-size: 32px;
+  }
+
+  .BookAction form input:not([type='checkbox']),
+  .BookAction label {
+    font-size: 20px;
+  }
+
+  .BookAction form input:not([type='checkbox']) {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1600px) {
+  .BookAction {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .BookAction form input:not([type='checkbox']) {
+    width: 60%;
+  }
+}
+
+@media (max-width: 800px) {
+  .BookAction form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .BookAction {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 132px;
+  }
+
+  .BookAction form input:not([type='checkbox']) {
+    width: 80%;
+  }
 }

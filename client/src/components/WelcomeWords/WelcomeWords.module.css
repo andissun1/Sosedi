@@ -26,3 +26,23 @@
   width: 810px;
   height: 600px;
 }
+
+@media (max-width: 1600px) {
+  .WelcomeWords {
+    width: 100%;
+  }
+
+  .WelcomeWords h1 {
+    font-size: 32px;
+  }
+
+  .WelcomeWords p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}

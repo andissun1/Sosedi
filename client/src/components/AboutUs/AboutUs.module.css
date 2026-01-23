@@ -113,8 +113,25 @@
   display: none;
 }
 
+@media (max-width: 1600px) {
+  .AboutUs h1 {
+    font-size: 32px;
+  }
+
+  .AboutUs li,
+  .AboutUs p,
+  .AboutUs button {
+    font-size: 20px;
+  }
+}
+
 @media (max-width: 780px) {
   .AboutUs {
+    width: 100%;
     flex-direction: column;
+  }
+
+  .AboutUs button {
+    width: 80%;
   }
 }

@@ -35,3 +35,27 @@
     height: 100px;
   }
 }
+
+@media (max-width: 1600px) {
+  .Header nav {
+    font-size: 20px;
+  }
+
+  .Header img {
+    height: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .Header {
+    height: 50px;
+  }
+
+  .Header nav {
+    display: none;
+  }
+
+  .Header img {
+    height: 100%;
+  }
+}

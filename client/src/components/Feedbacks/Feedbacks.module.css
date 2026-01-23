@@ -117,3 +117,28 @@
   margin-bottom: 20px;
   margin-top: 81px;
 }
+
+@media (max-width: 1600px) {
+  .Feedbacks {
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+  }
+
+  .NewsFromWall {
+    width: 100%;
+  }
+
+  .Feedbacks h1 {
+    font-size: 32px;
+  }
+
+  .Feedbacks button {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .NewsFromWall {
+    width: 90%;
+  }
+}

@@ -1,7 +1,7 @@
 import { AboutUs } from '../../components/AboutUs/AboutUs';
 import { BookAction } from '../../components/BookAction/BookAction';
 import { Feedbacks } from '../../components/Feedbacks/Feedbacks';
-import { GiftCards } from '../../components/GiftCards/GiftCards';
+// import { GiftCards } from '../../components/GiftCards/GiftCards';
 import { InfoBlock } from '../../components/InfoBlock/InfoBlock';
 // import { LatestNewsFromVK } from '../../components/LatestNewsFromVK/LatestNewsFromVK';
 import { MainBlock } from '../../components/MainBlock/MainBlock';
@@ -20,7 +20,7 @@ export const ClientLayout = () => {
       <NewsFromWall />
       <RentBlock />
       <SpecialOffer />
-      <GiftCards />
+      {/* <GiftCards /> */}
       <InfoBlock />
       <Feedbacks />
       <BookAction />

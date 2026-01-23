@@ -114,3 +114,19 @@
   margin-bottom: 20px;
   margin-top: 81px;
 }
+
+@media (max-width: 1600px) {
+  .SpecialOffer h1 {
+    font-size: 32px;
+  }
+
+  .SpecialOffer button {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+  .NewsFromWall {
+    width: 100%;
+  }
+}
