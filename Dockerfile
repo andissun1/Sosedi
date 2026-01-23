@@ -1,4 +1,3 @@
-# Клиентская сборка
 FROM node:20 as builder
 WORKDIR /app/client
 COPY ./client/ ./
@@ -10,7 +9,7 @@ WORKDIR /app/server
 
 
 COPY ./server/package*.json ./
-RUN npm ci
+RUN npm ci && npx prisma generate
 
 
 COPY --from=builder /app/client/dist ./client/dist
