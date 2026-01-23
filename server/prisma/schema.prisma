@@ -1,0 +1,116 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id       String @id @default(uuid())
+  name     String
+  email    String @unique
+  password String
+  phone    String
+  rents    Rent[]
+
+  roleId Int  @default(3)
+  role   Role @relation(fields: [roleId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Role {
+  id    Int    @id @default(autoincrement())
+  name  String
+  users User[]
+}
+
+model Rent {
+  id         Int        @id @default(autoincrement())
+  date       DateTime[] // Начало и конец аренды
+  customer   User       @relation(fields: [customerId], references: [id])
+  customerId String
+  slot       Slot?      @relation(fields: [slotId], references: [id])
+  slotId     Int?
+  info       String
+
+  @@index([customerId])
+  @@index([slotId])
+}
+
+model Slot {
+  id          Int     @id @default(autoincrement())
+  info        String
+  isAvailable Boolean
+  rents       Rent[]
+
+  @@map("slots")
+}
+
+model BoardGame {
+  id          Int      @id @default(autoincrement())
+  name        String
+  images      String[]
+  minPlayers  Int
+  maxPlayers  Int
+  minPlaytime Int
+  maxPlaytime Int
+  description String
+
+  categoryId Int
+  categories Category[]
+
+  tags  Tag[] @relation()
+  tagId Int
+
+  isAvailable Boolean
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("board_games")
+}
+
+model Category {
+  id    Int         @id @default(autoincrement())
+  games BoardGame[]
+  name  String      @unique
+
+  @@map("categories")
+}
+
+model Tag {
+  id          Int       @id @default(autoincrement())
+  name        String
+  boardGame   BoardGame @relation(fields: [boardGameId], references: [id])
+  boardGameId Int
+}
+
+model Events {
+  id     Int      @id @default(autoincrement())
+  images String[]
+  link   String
+  title  String
+  text   String
+}
+
+// enum Category {
+//   classic
+//   card_games
+//   duel_games
+//   cooperative_games
+//   strategy
+//   economic
+//   RPG
+//   adventure
+//   detective
+//   party
+//   children
+//   hardcore
+// }
