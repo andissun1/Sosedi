@@ -9,14 +9,14 @@ WORKDIR /app/server
 
 
 COPY ./server/package*.json ./
-RUN npm ci && npx prisma generate
+RUN npm ci
 
 
 COPY --from=builder /app/client/dist ./client/dist
 COPY ./server/ ./ 
 
 
-RUN npm run build
+RUN npx prisma generate && npm run build
 
 EXPOSE 3005
 
