@@ -108,7 +108,7 @@ export class AuthController {
   @UseGuards(AuthGuard('jwt'))
   @Get('@me')
   @HttpCode(HttpStatus.OK)
-  me(@GetUser('id') user: User) {
+  me(@GetUser() user: User) {
     return user;
   }
 }
