@@ -1,5 +1,6 @@
-/* .Feedbacks {
-} */
+.Feedbacks {
+  scroll-margin-top: 132px;
+}
 
 .SpecialOffer {
   display: flex;

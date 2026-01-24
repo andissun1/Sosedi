@@ -23,7 +23,7 @@ export const Feedbacks = () => {
   };
 
   return (
-    <div className={style.Feedbacks}>
+    <div className={style.Feedbacks} id="feedbacks">
       <div className={style.SpecialOffer}>
         <h1>Что о нас говорят</h1>
         <div className={style.wrapper}>
@@ -38,7 +38,7 @@ export const Feedbacks = () => {
           </button>
         </div>
 
-        <button className={style.rentButton}>Забронировать</button>
+        {/* <button className={style.rentButton}>Забронировать</button> */}
       </div>
     </div>
   );

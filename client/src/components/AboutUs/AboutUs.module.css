@@ -50,7 +50,6 @@
   background-color: #828282;
   border: none;
   font-size: 32px;
-  margin-bottom: 45px;
 }
 
 .stars {
@@ -116,6 +115,15 @@
 @media (max-width: 1600px) {
   .AboutUs h1 {
     font-size: 32px;
+  }
+
+  .AboutUs {
+    height: fit-content;
+  }
+
+  .content button {
+    padding: 20px;
+    height: fit-content;
   }
 
   .AboutUs li,

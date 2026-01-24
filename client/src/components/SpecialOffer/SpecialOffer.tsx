@@ -23,7 +23,7 @@ export const SpecialOffer = () => {
   };
 
   return (
-    <div className={style.SpecialOffer}>
+    <div className={style.SpecialOffer} id="cubic">
       <h1>Клубы в клубе</h1>
       <div className={style.wrapper}>
         <div className={style.NewsFromWall} ref={newsView}>
@@ -37,7 +37,7 @@ export const SpecialOffer = () => {
         </button>
       </div>
 
-      <button className={style.rentButton}>Забронировать</button>
+      {/* <button className={style.rentButton}>Забронировать</button> */}
     </div>
   );
 };

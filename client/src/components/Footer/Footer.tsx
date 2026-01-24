@@ -13,8 +13,8 @@ export const Footer = () => {
         >
           ул. Годовикова 19a 📍
         </a> */}
-        <p>+7 909 990 99 00</p>
-        <p>Sosedi@mail.ru</p>
+        {/* <p>+7 909 990 99 00</p>
+        <p>Sosedi@mail.ru</p> */}
       </div>
     </div>
   );

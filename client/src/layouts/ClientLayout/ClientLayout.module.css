@@ -2,11 +2,18 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
+  padding-inline: 50px;
 }
 
 @media (min-width: 1920px) {
   .clientLayout {
     max-width: 1620px;
     margin: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .clientLayout {
+    padding-inline: 5px;
   }
 }

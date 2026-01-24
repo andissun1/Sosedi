@@ -27,7 +27,7 @@
   flex: 1;
   background-color: #d9d9d9;
   border-radius: 48px;
-  min-height: 660px;
+  min-height: 400px;
   /* width: 805px; */
   position: relative;
 }
@@ -53,6 +53,7 @@
 }
 
 .content {
+  padding: 30px 20px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -67,22 +68,12 @@
   border: none;
   font-size: 32px;
   background-color: #aeaeae;
-  margin-bottom: 20px;
 }
 
 .content li {
   font-size: 32px;
-  margin: 0px 0 0 130px;
+
   list-style: none;
-  margin-top: 70px;
-}
-
-.content p:last-of-type {
-  margin-bottom: 81px;
-}
-
-.content > * {
-  margin-left: 130px;
 }
 
 @media (max-width: 780px) {
@@ -112,8 +103,7 @@
 }
 
 .everyRoom button {
-  height: 77px;
-  width: 392px;
+  padding: 20px;
 
   margin-inline: auto;
 
@@ -121,8 +111,6 @@
   border: none;
   font-size: 32px;
   background-color: #aeaeae;
-  margin-bottom: 20px;
-  margin-top: 81px;
 }
 
 @media (max-width: 1600px) {

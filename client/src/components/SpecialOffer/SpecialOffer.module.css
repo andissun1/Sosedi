@@ -1,6 +1,7 @@
 .SpecialOffer {
   display: flex;
   flex-direction: column;
+  scroll-margin-top: 132px;
 }
 
 .SpecialOffer h1 {
@@ -11,7 +12,7 @@
 .NewsFromWall {
   display: flex;
   margin: auto;
-  width: 1200px;
+
   gap: 20px;
   padding: 20px;
 
@@ -20,8 +21,6 @@
   overflow-y: hidden;
   scroll-padding: 20px;
   height: 500px;
-
-  scroll-margin-top: 132px;
 }
 
 .NewsFromWall::-webkit-scrollbar {

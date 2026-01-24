@@ -11,6 +11,7 @@
 }
 
 .RentBlock h2 {
+  margin: auto;
   font-size: 48px;
   font-weight: 400;
 }
@@ -55,29 +56,26 @@
   flex: 1;
   border: 3px solid #d9d9d9;
   border-radius: 48px;
+  padding: 60px;
 }
 
-.content button {
-  height: 77px;
-  width: 392px;
+.buttons {
+  display: flex;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.buttons button {
+  flex: 1;
+  height: fit-content;
   border-radius: 24px;
   border: none;
   font-size: 32px;
   background-color: #aeaeae;
-  margin-bottom: 20px;
 }
 
 .content p {
   font-size: 32px;
-  margin-bottom: 55px;
-}
-
-.content p:last-of-type {
-  margin-bottom: 81px;
-}
-
-.content > * {
-  margin-left: 130px;
 }
 
 @media (max-width: 780px) {
@@ -96,6 +94,7 @@
   display: flex;
   /* justify-content: center; */
   gap: 19px;
+  margin-bottom: 20px;
 }
 
 .item {
@@ -107,8 +106,8 @@
 }
 
 .everyRoom button {
-  height: 77px;
-  width: 392px;
+  padding: 20px;
+  width: 50%;
 
   margin-inline: auto;
 
@@ -117,7 +116,6 @@
   font-size: 32px;
   background-color: #aeaeae;
   margin-bottom: 20px;
-  margin-top: 81px;
 }
 
 @media (max-width: 1600px) {
@@ -126,9 +124,42 @@
     font-size: 32px;
   }
 
+  .content {
+    padding: 20px 20px 20px 20px;
+  }
+
+  .photos {
+    min-height: auto;
+  }
+
+  .photo {
+    height: 200px;
+    width: 300px;
+  }
+
+  .firstPhoto {
+    top: 40px;
+    left: 60px;
+  }
+
+  .secondPhoto {
+    bottom: 40px;
+    right: 60px;
+  }
+
+  .content button {
+    height: fit-content;
+    padding: 20px;
+  }
+
   .RentBlock p,
   .RentBlock button {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .item {
+    height: 400px;
   }
 }
 
@@ -140,6 +171,7 @@
   .photo {
     height: 250px;
     width: 200px;
+    display: none;
   }
 
   .everyRoom button {

@@ -13,13 +13,13 @@ export const AboutUs = () => {
   };
 
   return (
-    <div className={style.secondWrapper}>
+    <div className={style.secondWrapper} id="aboutUs">
       <div className={style.wrapper} ref={wrapper}>
         <div className={style.AboutUs}>
           <div className={style.content}>
             <h1>О нас</h1>
             <p className={style.desc}>
-              Соседи — это уютное, открытое, современное пространство для отдыха и работы,
+              Соседи — это уютное, открытое, современное пространство для отдыха и работы,
               интересных игр и новых впечатлений, где вы платите только за время, всё
               остальное - бесплатно!
             </p>
@@ -31,8 +31,9 @@ export const AboutUs = () => {
             </ul>
             <button>Забронировать</button>
           </div>
-          <div className={style.img}>Фото</div>
+          {/* <div className={style.img}>Фото</div> */}
         </div>
+
         <div className={style.AboutUs}>
           <div className={style.content}>
             <h1>Правила пребывания</h1>

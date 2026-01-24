@@ -20,8 +20,8 @@ export const InfoBlock = () => {
           </div>
 
           <div className={style.photos}>
-            <div className={style.photo + ' ' + style.firstPhoto}></div>
-            <div className={style.photo + ' ' + style.secondPhoto}></div>
+            {/* <div className={style.photo + ' ' + style.firstPhoto}></div> */}
+            {/* <div className={style.photo + ' ' + style.secondPhoto}></div> */}
           </div>
         </div>
       </div>
