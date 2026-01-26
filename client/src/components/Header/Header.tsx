@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import style from './Header.module.css';
+import { useAppSelector } from '../../store/hooks';
 
 export const Header = () => {
+  const userName = useAppSelector((state) => state.auth.name);
+
   return (
     <div className={style.Header}>
       <div className={style.headerContent}>
@@ -17,7 +20,7 @@ export const Header = () => {
           <div className={style.actionButton}></div>
           <div className={style.actionButton}></div>
           <Link className={style.actionButton} to={'/auth/login'}>
-            A
+            {userName ? userName : 'Войти'}
           </Link>
         </div>
       </div>
