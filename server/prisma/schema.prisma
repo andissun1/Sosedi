@@ -32,13 +32,17 @@ model Role {
 }
 
 model Rent {
-  id         Int        @id @default(autoincrement())
-  date       DateTime[] // Начало и конец аренды
-  customer   User       @relation(fields: [customerId], references: [id])
-  customerId String
-  slot       Slot?      @relation(fields: [slotId], references: [id])
-  slotId     Int?
-  info       String
+  id          Int        @id @default(autoincrement())
+  comment     String
+  NumOfPeople String
+  date        DateTime[] // Начало и конец аренды
+  customer    User       @relation(fields: [customerId], references: [id])
+  customerId  String
+  slot        Slot?      @relation(fields: [slotId], references: [id])
+  slotId      Int?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@index([customerId])
   @@index([slotId])

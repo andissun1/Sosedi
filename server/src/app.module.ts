@@ -12,6 +12,8 @@ import { SeedService } from './seed/seed.service';
 import { UserModule } from './user/user.module';
 import { BoardGameModule } from './board-game/board-game.module';
 import { CategoryModule } from './category/category.module';
+import { EventModule } from './event/event.module';
+import { RentModule } from './rent/rent.module';
 
 @Module({
   imports: [
@@ -34,6 +36,8 @@ import { CategoryModule } from './category/category.module';
     UserModule,
     BoardGameModule,
     CategoryModule,
+    EventModule,
+    RentModule,
   ],
   controllers: [AppController],
   providers: [AppService, SeedService],
