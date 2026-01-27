@@ -62,34 +62,49 @@ model BoardGame {
   minPlaytime Int
   maxPlaytime Int
   description String
-
-  categoryId Int
-  categories Category[]
-
-  tags  Tag[] @relation()
-  tagId Int
-
   isAvailable Boolean
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  difficulty  String
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  categories BoardGameCategory[]
+  tags       BoardGameTag[]
 
   @@map("board_games")
 }
 
 model Category {
-  id    Int         @id @default(autoincrement())
-  games BoardGame[]
-  name  String      @unique
+  id         Int                 @id @default(autoincrement())
+  name       String              @unique
+  boardGames BoardGameCategory[]
 
   @@map("categories")
 }
 
 model Tag {
-  id          Int       @id @default(autoincrement())
-  name        String
+  id    Int            @id @default(autoincrement())
+  name  String
+  games BoardGameTag[] // Все связи с играми
+}
+
+model BoardGameCategory {
   boardGame   BoardGame @relation(fields: [boardGameId], references: [id])
   boardGameId Int
+  category    Category  @relation(fields: [categoryId], references: [id])
+  categoryId  Int
+
+  @@id([boardGameId, categoryId])
+  @@map("board_game_categories")
+}
+
+model BoardGameTag {
+  boardGame   BoardGame @relation(fields: [boardGameId], references: [id])
+  boardGameId Int
+  tag         Tag       @relation(fields: [tagId], references: [id])
+  tagId       Int
+
+  @@id([boardGameId, tagId])
+  @@map("board_game_tags")
 }
 
 model Events {

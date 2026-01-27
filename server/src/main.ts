@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import cookieParser from 'cookie-parser';
 import { setUpSwagger } from './utils/swagger.utils';
+import { SeedService } from './seed/seed.service';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -30,6 +31,8 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
 
   setUpSwagger(app);
+  const seedService = app.get(SeedService);
+  await seedService.seed();
 
   await app.listen(process.env.PORT ?? 3000);
 }

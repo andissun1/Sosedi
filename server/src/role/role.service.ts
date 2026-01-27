@@ -19,19 +19,28 @@ export class RoleService {
     return newRole;
   }
 
-  findAll() {
-    return `This action returns all role`;
+  async findAll() {
+    return await this.prismaService.role.findMany();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} role`;
+  async update(id: number, updateRoleDto: UpdateRoleDto) {
+    console.log(updateRoleDto);
+
+    return await this.prismaService.role.update({
+      where: {
+        id,
+      },
+      data: {
+        name: updateRoleDto.name,
+      },
+    });
   }
 
-  update(id: number, updateRoleDto: UpdateRoleDto) {
-    return `This action updates a #${id} role`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} role`;
+  async remove(id: number) {
+    return await this.prismaService.role.delete({
+      where: {
+        id,
+      },
+    });
   }
 }

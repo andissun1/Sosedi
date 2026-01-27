@@ -111,4 +111,14 @@ export class AuthController {
   me(@GetUser() user: User) {
     return user;
   }
+
+  @ApiOperation({
+    summary: 'Сброс пароля',
+    description: 'Генерирует новый пароль по почте для входа в аккаунт',
+  })
+  @Post('resetPassword')
+  @HttpCode(HttpStatus.OK)
+  resetPassword(@Body('email') email: string) {
+    return this.authService.resetPassword(email);
+  }
 }

@@ -12,12 +12,13 @@ export const routes = createBrowserRouter([
         index: true,
         Component: ClientLayout,
       },
+      {
+        path: '/auth/:type',
+        Component: Auth,
+      },
     ],
   },
-  {
-    path: '/auth/:type',
-    Component: Auth,
-  },
+
   // {
   //   path: '*',
   //   element: <Navigate to="/" />,

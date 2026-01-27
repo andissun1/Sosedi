@@ -171,4 +171,29 @@ export class AuthService {
       sameSite: !isDev(this.configService) ? 'none' : 'lax',
     });
   }
+
+  async resetPassword(email: string) {
+    const user = await this.prismaService.user.findUnique({
+      where: {
+        id: email,
+      },
+      select: { id: true },
+    });
+
+    if (!user) {
+      throw new NotFoundException('Пользователь не найден');
+    }
+
+    const newPassword = String(Math.floor(Math.random() * 10000));
+    await this.prismaService.user.update({
+      where: {
+        id: user.id,
+      },
+      data: {
+        password: await hash(newPassword),
+      },
+    });
+
+    return newPassword;
+  }
 }

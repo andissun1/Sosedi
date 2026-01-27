@@ -3,6 +3,7 @@ import {
   IsEmail,
   IsNotEmpty,
   IsNumber,
+  IsOptional,
   IsString,
   MaxLength,
   MinLength,
@@ -47,6 +48,7 @@ export class RegisterRequestDto {
   @MaxLength(50, { message: 'Пароль должен быть не более 50 символов' })
   password: string;
 
+  @IsOptional()
   @IsNumber({}, { message: 'Поле roleId должно быть числом' })
-  roleId: number;
+  roleId?: number;
 }
