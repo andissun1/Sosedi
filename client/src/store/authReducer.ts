@@ -129,12 +129,12 @@ export const register =
 
 export const resetPassword =
   (email: string): ThunkResult =>
-  (dispatch) => {
+  async (dispatch) => {
     try {
       dispatch(authActions.setIsLoadingUser(true));
-      const newPassword = request.post(`/api/auth/resetPassword`, { email });
+      const { data } = await request.post(`/api/auth/resetPassword`, { email });
       dispatch(authActions.setIsLoadingUser(false));
-      return newPassword;
+      return data;
     } catch (error) {
       return returnError(error);
     }

@@ -68,7 +68,7 @@ export const Auth = () => {
       }
 
       case 'resetPassword': {
-        const { newPassword } = await dispatch(resetPassword(formData.email));
+        const newPassword = await dispatch(resetPassword(formData.email));
         setError({ ...error, server: `Ваш новый пароль: ${newPassword}` });
         break;
       }
